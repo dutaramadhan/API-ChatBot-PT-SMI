@@ -46,7 +46,7 @@ def chat_completion(query, query_result):
     #     ]
     # })
     # headers = {
-    #     'Authorization': 'Bearer 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',
+    #     'Authorization': 'Bearer ' + os.getenv('API_KEY'),
     #     'Content-Type': 'application/json'
     # }
 
