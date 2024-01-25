@@ -15,5 +15,9 @@ def chatbot():
         error_message = {'error': str(e)}
         return jsonify(error_message), 400
 
+@app.route('/', methods=['GET'])
+def info():
+    return 'Server is Running on port 5000'
+
 if __name__ == '__main__':
     app.run(debug=True, port=5002)
