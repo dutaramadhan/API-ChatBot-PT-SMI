@@ -10,7 +10,14 @@ def chatbot():
     try:
         query = request.args.get('query')
         result = run_conversation(query)
-        return jsonify(result) 
+        response = {
+            "message": {
+                "content": result.choices[0].message.content,
+                "role": result.choices[0].message.role
+            },
+            "usage": vars(result.usage)
+        }
+        return jsonify(response) 
     except Exception as e:
         error_message = {'error': str(e)}
         return jsonify(error_message), 400

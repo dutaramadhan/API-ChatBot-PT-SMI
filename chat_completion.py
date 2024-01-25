@@ -81,29 +81,6 @@ def run_conversation(query):
             model="gpt-3.5-turbo-1106",
             messages=messages,
         )
-        second_response = {
-            "finish_reason": second_response.choices[0].finish_reason,
-            "index": second_response.choices[0].index,
-            "logprobs": second_response.choices[0].logprobs,
-            "message": {
-                "content": second_response.choices[0].message.content,
-                "role": second_response.choices[0].message.role,
-                "function_call": second_response.choices[0].message.function_call,
-                "tool_calls": second_response.choices[0].message.tool_calls
-            }
-        }
-
         return second_response
     else:
-        response = {
-            "finish_reason": response.choices[0].finish_reason,
-            "index": response.choices[0].index,
-            "logprobs": response.choices[0].logprobs,
-            "message": {
-                "content": response.choices[0].message.content,
-                "role": response.choices[0].message.role,
-                "function_call": response.choices[0].message.function_call,
-                "tool_calls": response.choices[0].message.tool_calls
-            }
-        }
         return response
