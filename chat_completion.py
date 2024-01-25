@@ -8,11 +8,10 @@ from flask import abort
 load_dotenv()
 
 client = OpenAI(api_key = os.getenv('API_KEY'))
-api_query_url = r'http://10.10.6.69:5000/smi/api/embedding/query'
 
 def search_data(query):
     try:
-        response = requests.get(api_query_url, params={'query': query})
+        response = requests.get(os.getenv('API_QUERY_URL'), params={'query': query})
         result = response.json().get('result')
         data = ""
         for i, res in enumerate(sorted(result, key=lambda x: x['similarity'], reverse=True)[0:6]):
@@ -27,7 +26,7 @@ def search_data(query):
         abort(400, str(e))
 
 def run_conversation(query):
-    messages = [{"role": "system", "content": "You are professional assistant. answer question based on data. you can search data with function call. Dont search multiple data in 1 query instead split into multiple query. always include the source on answer and source url. dont answer a question that didnt relate to PT SMI and the data that have been given before"},
+    messages = [{"role": "system", "content": "You are professional assistant. answer question based on data. you can search data with function call. Dont search multiple data in 1 query instead split into multiple query. always include the source on answer and source url. DON'T ANSWER a question that didnt relate to PT SMI and the data that have been given"},
                 {"role": "user", "content": query}]
     tools = [
         {
