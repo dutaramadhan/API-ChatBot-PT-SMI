@@ -17,7 +17,7 @@ def search_data(query):
         for i, res in enumerate(sorted(result, key=lambda x: x['similarity'], reverse=True)[0:6]):
             data += "\n\ndata " + str(i+1) + '\n'
             #data += "\nsource title : " + res.get('source_title')
-            uri = 'http://10.10.6.69:5000/files/' + res.get('source_uri')
+            uri = res.get('source_uri')
             data += "\nsource url : " + uri + '\n'
             #data += "\ncontent : " + res.get('content')
             data += res.get('source_title') + ' ' + res.get('content')
