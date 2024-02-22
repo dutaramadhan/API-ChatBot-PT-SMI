@@ -43,7 +43,7 @@ def chatbot_with_history():
 
 @app.route('/', methods=['GET'])
 def info():
-    return 'Server is Running on port 5000'
+    return 'Server is Running on port 5002'
 
 if __name__ == '__main__':
     app.run(debug=True, port=5002)
