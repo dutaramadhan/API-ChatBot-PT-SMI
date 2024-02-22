@@ -82,9 +82,9 @@ Fitur untuk mencari tambahan pengetahuan berdasar simmilarity setiap data di dal
    API_QUERY_URL = ...
    ```
 10. Jalankan aplikasi
-   ```
-   python app.py
-   ```
+    ```
+    python app.py
+    ```
 11. Cek apakah server sedang berjalan
     ```
     http://localhost:5000/
