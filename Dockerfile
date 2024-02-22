@@ -17,4 +17,4 @@ COPY . .
 RUN pip install gunicorn
 
 # Set the entry point command with gunicorn
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5001", "app:app"]
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5002", "app:app"]
