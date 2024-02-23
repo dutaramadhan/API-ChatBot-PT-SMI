@@ -99,11 +99,11 @@ Fitur untuk mencari tambahan pengetahuan berdasar simmilarity setiap data di dal
    ```
 2. Build docker image
    ```
-   docker build -t api-etl .
+   docker build -t api-chatbot .
    ```
 3. Run docker image
    ```
-   docker run -d -p 5002:5002 -v /home/smiuser/sources-files:/app/files --name api-etl api-etl
+   docker run -d -p 5002:5002 --name api-chatbot api-chatbot
    ```
 4. Cek apakah server sedang berjalan
     ```
@@ -116,6 +116,8 @@ http://10.10.6.69:5002
 
 <a name="endpoint"></a>
 ## API Endpoint
+### 1. chatbot
+   Get chatbot response based on query
  - ##### Route
    ```
    GET /smi/chatbot
@@ -124,6 +126,32 @@ http://10.10.6.69:5002
 - ##### Parameters
   ```
   query: string
+  ```
+
+- ##### Response
+  ```
+    Ntar baru down servernya
+  ```
+### 2. chatbot with history
+   Get chatbot response based on query and mantain previous chat context history
+ - ##### Route
+   ```
+   POST /smi/chatbot
+   ```
+
+- ##### Parameters
+  ```
+  query: string
+  ```
+  
+- ##### body json
+  ```
+  {
+     "history": [{
+        "role": "user" OR "assistant",
+        "content": string
+     }]
+  }
   ```
 
 - ##### Response
