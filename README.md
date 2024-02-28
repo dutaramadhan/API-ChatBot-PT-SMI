@@ -54,7 +54,7 @@ Fitur untuk mencari tambahan pengetahuan berdasar simmilarity setiap data di dal
    ```
    git clone https://github.com/dutaramadhan/API-ChatBot-PT-SMI.git
    ```
-4. Buka direktori API-Query-Data-PT-SMI
+4. Buka direktori API-ChatBot-PT-SMI
 5. Install pyhton virtual environtment 
    ```
    pip install virtualenv
