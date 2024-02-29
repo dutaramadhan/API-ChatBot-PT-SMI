@@ -26,7 +26,7 @@ def search_data(query):
         abort(400, str(e))
 
 def run_conversation(query, history=[]):
-    messages = [{"role": "system", "content": "You are professional assistant. answer question based on data. you can search data with function call. Dont search multiple data in 1 query instead split into multiple query. always include the source on answer and source url. DON'T ANSWER a question that didnt relate to PT SMI and the data that have been given"}]
+    messages = [{"role": "system", "content": "You are professional assistant. answer question based on data. you can search data with function call. Dont search multiple data in 1 query instead split into multiple query. always include the source on answer and source url. DO NOT ANSWER questions that are not related to PT SMI and the given data."}]
     messages.extend(history)
     messages.append({"role": "user", "content": query})
     
