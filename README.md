@@ -40,6 +40,15 @@ Fitur untuk mencari tambahan pengetahuan berdasar simmilarity setiap data di dal
 
 <a name="systems-flow"></a>
 ## System's Flow
+![Alur Sistem](https://drive.google.com/uc?id=1_P4IQlSvKflwW5kDQBQK6Bxw8uOhNFFD)
+1. Sistem API Chatbot menerima input berupa query atau pertanyaan
+2. Sistem menggunakan bantuan OpenAI GPT akan memilih untuk melakukan fetch data ke Query API untuk mendapatkan data yang relevan dengan pertanyaan
+3. Data relevan diperoleh
+4. Sistem mengirim query dan data relevan yang diperoleh serta chat history sebelumnya ke API OpenAI untuk dilakukan analisis oleh model Chat Completion GPT-3.5 Turbo
+5. GPT akan mengeluarkan jawaban sesuai pertanyaan dan data yang diberikan
+6. Jawaban dikembalikan response
+7. Pertanyaan dan jawaban yang telah dihasilkan disimpan ke chat history yang nantinya akan digunakan setiap pertanyaan selanjutnya
+
 
 <a name="tech-stack"></a>
 ## Tech Stack
